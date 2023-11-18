@@ -43,4 +43,33 @@ public class Dice {
 
         }
     }
+
+    public static int d12(int numberOfDices){
+        int counter = 0;
+        int finalResult = 0;
+
+        while (counter < numberOfDices){
+
+            Random random = new Random();
+            int result = random.nextInt(1, 13);
+            finalResult += result;
+            
+            counter++;
+
+            System.out.println("Dado " + counter + ": " + result);
+        }
+
+        System.out.println("Resultado final: " + finalResult);
+        return finalResult;
+    }
+    public static int d12(){
+        
+        Random random = new Random();
+        int result = random.nextInt(1, 13);
+
+        System.out.println("Resultado: " + result);
+        return result;
+    }
+
+    
 }
