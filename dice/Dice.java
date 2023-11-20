@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Dice {
     
-    public static int d20(int numberOfDices, int advantages){
+    public static int rollD20(int numberOfDices, int advantages){
         int[] values;
         int finalValue;
 
@@ -44,14 +44,16 @@ public class Dice {
         }
     }
 
-    public static int d12(int numberOfDices){
+    public static int rollDice(int sides, int numberOfDices){
         int counter = 0;
         int finalResult = 0;
+
+        System.out.println("Rolando dado de " + sides + " lados...");
 
         while (counter < numberOfDices){
 
             Random random = new Random();
-            int result = random.nextInt(1, 13);
+            int result = random.nextInt(1, sides + 1);
             finalResult += result;
             
             counter++;
@@ -62,10 +64,12 @@ public class Dice {
         System.out.println("Resultado final: " + finalResult);
         return finalResult;
     }
-    public static int d12(){
+    public static int rollDice(int sides){
+
+        System.out.println("Rolando dado de " + sides + " lados...");
         
         Random random = new Random();
-        int result = random.nextInt(1, 13);
+        int result = random.nextInt(1, sides + 1);
 
         System.out.println("Resultado: " + result);
         return result;
