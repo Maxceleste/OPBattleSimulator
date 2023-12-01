@@ -1,13 +1,14 @@
 package main;
 
 import dice.Dice;
+import generator.*;
 
 public class Main{
 
     public static void main(String[] args){
         System.out.println("Incializando OPRPG Battle...");
 
-        boolean showText = true;
+        boolean showText = false;
 
         System.out.println("***************************************");
         Dice.rollD20(3, 5, showText);
@@ -33,5 +34,11 @@ public class Main{
         Dice.rollDice(4, showText, 2);
         System.out.println("***************************************");
 
+        CharacterGen c = new CharacterGen();
+
+        String[] origin = c.genOrigin();
+
+        for (String o : origin) System.out.println(o);
+        
     }
 }
